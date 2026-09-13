@@ -1,28 +1,82 @@
+# ============================================================
+# Git 忽略规则
+# 说明：本文件只排除"确认无用/可再生成"的内容。
+#       如果你以后有文件被误排除，在下面加一行 !文件名 即可恢复跟踪。
+# ============================================================
+
 # ---- 操作系统 ----
 Thumbs.db
+ehthumbs.db
 Desktop.ini
-.DS_Store
 $RECYCLE.BIN/
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
 
 # ---- 编辑器 / IDE ----
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
+*.code-workspace
 
-# ---- 依赖与构建产物 ----
+# ---- 依赖与构建产物（可再生成）----
 node_modules/
 dist/
 build/
-target/
 out/
+target/
+bin/
+obj/
 __pycache__/
 *.py[cod]
 .venv/
 venv/
+env/
+.venv*/
+*.egg-info/
 
 # ---- 日志与临时文件 ----
 *.log
+logs/
 *.tmp
+*.temp
 *.bak
+*.orig
+*.rej
+*.cache
+
+# ---- 密钥与环境变量（重要：不要提交）----
 .env
 .env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.pfx
+*.p12
+secrets.json
+credentials.json
+*.secret
+
+# ---- 打包 / 压缩产物 ----
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# ---- 大体积二进制（避免仓库臃肿）----
+*.exe
+*.dll
+*.iso
+*.msi
+*.dmg
+
+# ---- 本地个人设置 / 临时笔记 ----
+*.local
+scratch/
+todo.local.md
